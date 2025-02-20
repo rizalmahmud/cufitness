@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>User Profile</h2>
+  <p>Welcome, {{ request.user.email }}!</p>
+
+    <!-- Add Logout Button -->
+  <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" style="padding: 8px 16px; background-color: #ccc; border-radius: 4px; border: none; cursor: pointer;">Logout</button>
+</form>
+
+{% endblock %}
