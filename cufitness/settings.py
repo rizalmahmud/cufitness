@@ -93,3 +93,4 @@ STATIC_URL = '/static/'
 # Email configuration for password reset (for development)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'noreply@cufitness.com'
+

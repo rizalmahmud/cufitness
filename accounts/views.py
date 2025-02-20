@@ -15,3 +15,7 @@ def register(request):
     else:
         form = EmailUserCreationForm()
     return render(request, 'accounts/register.html', {'form': form})
+from django.shortcuts import render
+
+def profile(request):
+    return render(request, 'accounts/profile.html')

@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
+        <div style="text-align: center;">
+    <p><strong><em>"Do it for the people who wants to see you fail"</em></strong></p>
+</div>
+
+
     <h2>Login</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Login</button>
     </form>
+
     <p>Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
     <p>
   Forgot your password? <a href="{% url 'password_reset' %}">Reset it here</a>.
