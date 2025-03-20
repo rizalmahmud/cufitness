@@ -19,4 +19,6 @@ CUFitness is a Django-based web application that provides user registration, log
 
 - **Home Page:**  
   The home page displays a motivational quote in bold and italic, centered on the page, and provides navigation links to register, log in, and access other parts of the site.
+  **My Workouts**
+  Workout routine for different weight classes. 
 
