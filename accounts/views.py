@@ -4,6 +4,8 @@ from .forms import EmailUserCreationForm
 
 def home(request):
     return render(request, 'home.html')
+def terms(request):
+    return render(request, 'terms.html')
 
 def register(request):
     if request.method == 'POST':

@@ -3,6 +3,8 @@ from django.contrib import admin
 from django.urls import path, include
 from accounts.views import home  # Import the home view from accounts
 from django.contrib.auth import views as auth_views
+from accounts.views import home, terms
+
 
 urlpatterns = [
     path('', home, name='home'),  # Home page URL
@@ -21,4 +23,5 @@ path('password-reset-complete/',
      auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
      name='password_reset_complete'),
 path('workouts/', include('workouts.urls')),
+path('terms/', terms, name='terms'),
 ]
