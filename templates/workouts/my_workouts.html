@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>My Workouts</h2>
+    <ul>
+        <li><a href="{% url 'cardio' %}">Cardio</a></li>
+        <li><a href="{% url 'weights' %}">Weights</a></li>
+        <li><a href="{% url 'flexibility' %}">Flexibility</a></li>
+        <li><a href="{% url 'balance' %}">Balance</a></li>
+    </ul>
+    <p>Select a workout category to view the detailed routine.</p>
+{% endblock %}

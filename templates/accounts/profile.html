@@ -2,6 +2,10 @@
 {% block content %}
   <h2>User Profile</h2>
   <p>Welcome, {{ request.user.email }}!</p>
+    <p>
+  <a href="{% url 'my_workouts' %}" style="padding: 8px 16px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none;">My Workouts</a>
+</p>
+
 
     <!-- Add Logout Button -->
   <form action="{% url 'logout' %}" method="post">

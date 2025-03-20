@@ -24,7 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',  # our custom app
+    'accounts',
+    'workouts'# our custom app
 ]
 
 MIDDLEWARE = [
