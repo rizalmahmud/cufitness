@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Delete Account</h2>
+  <p>Are you sure you want to permanently delete your account? This action cannot be undone.</p>
+  <form method="post">
+      {% csrf_token %}
+      <button type="submit" style="padding: 8px 16px; background-color: #25970b; color: white; border: none; border-radius: 4px; cursor: pointer;">
+          Delete My Account
+      </button>
+      <a href="{% url 'profile' %}" style="padding: 8px 16px; background-color: #e1a54f; color: white; border-radius: 4px; text-decoration: none; margin-left: 10px;">
+          Cancel
+      </a>
+  </form>
+{% endblock %}

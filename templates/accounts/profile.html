@@ -3,22 +3,39 @@
   <h2>User Profile</h2>
   <p>Welcome, {{ request.user.email }}!</p>
     <p>
+
     <!-- Add My workouts Button -->
-  <a href="{% url 'my_workouts' %}" style="padding: 8px 16px; background-color: #e74c3c; color: white; border-radius: 4px; text-decoration: none;">My Workouts</a>
-</p>
+  <a href="{% url 'my_workouts' %}" style="padding: 8px 16px; background-color: #e74c3c; color: white; border-radius: 8px; text-decoration: none;">My Workouts</a>
     <p style="margin-top: 25px;"> <!-- Added margin-top to create space -->
 <p>
 <!-- Add My Goals Button -->
-  <a href="{% url 'my_goals' %}" style="padding: 8px 16px; background-color: #28a745; color: white; border-radius: 4px; text-decoration: none;">
+    <p style="margin-top: 30px;">
+  <a href="{% url 'my_goals' %}" style="padding: 8px 16px; background-color: #28a745; color: white; border-radius: 8px; text-decoration: none;">
       My Goals
   </a>
 </p>
+  <p>
+  <p style="margin-top: 80px;"> <!-- Added margin-top to create space -->
+
+      <div style="text-align: right; margin-top: 20px; margin-right: 1000px;">
+
+  <!-- Logout Button -->
+  <form action="{% url 'logout' %}" method="post" style="display:inline;">
+      {% csrf_token %}
+      <button type="submit" style="padding: 8px 16px; background-color: #5e6367; color: white; border: none; border-radius: 4px; cursor: pointer;">
+          Logout
+      </button>
+  </form>
+
+  <!-- Space Between Buttons -->
+  <span style="margin-left: 10px;"></span>
 
 
-    <!-- Add Logout Button -->
-  <form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <button type="submit" style="padding: 8px 16px; background-color: #ccc; border-radius: 4px; border: none; cursor: pointer;">Logout</button>
-</form>
+  <!-- Delete My Account Button -->
+
+  <a href="{% url 'delete_account' %}" style="padding: 8px 16px; background-color: #753d1b; color: white; border-radius: 4px; text-decoration: none; display:inline-block;">
+      Delete My Account
+  </a>
+</div>
 
 {% endblock %}
