@@ -1,0 +1,90 @@
+<!-- Diet Plan Section -->
+<hr>
+<h2>Diet Plans for Your Fitness Goals</h2>
+<p>Select your desired weight loss goal to view the corresponding diet plan:</p>
+
+<!-- Buttons (Tabs) for Diet Plans -->
+<div>
+  <button class="diet-tab" onclick="showDietPlan('plan2')" style="padding: 8px 16px; margin-right: 10px;">Lose 2 kg</button>
+  <button class="diet-tab" onclick="showDietPlan('plan5')" style="padding: 8px 16px; margin-right: 10px;">Lose 5 kg</button>
+  <button class="diet-tab" onclick="showDietPlan('plan7')" style="padding: 8px 16px; margin-right: 10px;">Lose 7 kg</button>
+  <button class="diet-tab" onclick="showDietPlan('plan10')" style="padding: 8px 16px;">Lose 10 kg</button>
+</div>
+
+<!-- Diet Plan Details (Hidden by Default) -->
+<div id="plan2" class="diet-plan" style="display:none; margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+  <h3>Diet Plan for 2 kg Weight Loss</h3>
+  <ul style="margin-bottom: 20px;">
+    <li>Breakfast: Oatmeal with berries and a small handful of almonds</li>
+    <li>Snack: Greek yogurt with honey</li>
+    <li>Lunch: Grilled chicken salad with mixed greens and vinaigrette</li>
+    <li>Snack: A piece of fruit (apple or orange)</li>
+    <li>Dinner: Steamed fish, quinoa, and steamed vegetables</li>
+    <li>Hydration: At least 8 glasses of water</li>
+    <li><strong>Recommended Daily Calorie Intake:</strong> 2100 calories</li>
+  </ul>
+  <div style="margin-top: 20px;">
+    <em>Note: This plan is ideal for 80kg body weight people.</em>
+  </div>
+</div>
+
+<div id="plan5" class="diet-plan" style="display:none; margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+  <h3>Diet Plan for 5 kg Weight Loss</h3>
+  <ul style="margin-bottom: 20px;">
+    <li>Breakfast: Scrambled eggs with spinach and whole-grain toast</li>
+    <li>Snack: A small smoothie (banana, spinach, protein powder, water)</li>
+    <li>Lunch: Turkey wrap with whole wheat tortilla and lots of veggies</li>
+    <li>Snack: Carrot sticks with hummus</li>
+    <li>Dinner: Baked salmon, brown rice, and broccoli</li>
+    <li>Hydration: 8-10 glasses of water daily</li>
+    <li><strong>Recommended Daily Calorie Intake:</strong> 1900 calories</li>
+  </ul>
+  <div style="margin-top: 20px;">
+    <em>Note: This plan is ideal for 80kg body weight people.</em>
+  </div>
+</div>
+
+<div id="plan7" class="diet-plan" style="display:none; margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+  <h3>Diet Plan for 7 kg Weight Loss</h3>
+  <ul style="margin-bottom: 20px;">
+    <li>Breakfast: Smoothie bowl with mixed berries, banana, and a sprinkle of granola</li>
+    <li>Snack: Cottage cheese with sliced pineapple</li>
+    <li>Lunch: Quinoa salad with black beans, corn, diced tomatoes, and avocado</li>
+    <li>Snack: A handful of mixed nuts</li>
+    <li>Dinner: Grilled lean beef or tofu, sweet potato, and green beans</li>
+    <li>Hydration: At least 10 glasses of water daily</li>
+    <li><strong>Recommended Daily Calorie Intake:</strong> 1700 calories</li>
+  </ul>
+  <div style="margin-top: 20px;">
+    <em>Note: This plan is ideal for 80kg body weight people.</em>
+  </div>
+</div>
+
+<div id="plan10" class="diet-plan" style="display:none; margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+  <h3>Diet Plan for 10 kg Weight Loss</h3>
+  <ul style="margin-bottom: 20px;">
+    <li>Breakfast: Egg white omelette with vegetables and a side of fresh fruit</li>
+    <li>Snack: Protein shake with water and a piece of fruit</li>
+    <li>Lunch: Grilled chicken or tempeh with mixed salad greens, quinoa, and a light dressing</li>
+    <li>Snack: Sliced cucumber and bell peppers with a light dip</li>
+    <li>Dinner: Baked cod or lentil stew with a variety of steamed vegetables</li>
+    <li>Hydration: At least 10-12 glasses of water daily</li>
+    <li><strong>Recommended Daily Calorie Intake:</strong> 1500 calories</li>
+  </ul>
+  <div style="margin-top: 20px;">
+    <em>Note: This plan is ideal for 80kg body weight people.</em>
+  </div>
+</div>
+
+<!-- JavaScript to Toggle Diet Plan Sections -->
+<script>
+  function showDietPlan(planId) {
+    // Hide all diet plan sections
+    var plans = document.getElementsByClassName('diet-plan');
+    for (var i = 0; i < plans.length; i++) {
+      plans[i].style.display = 'none';
+    }
+    // Display the selected diet plan section
+    document.getElementById(planId).style.display = 'block';
+  }
+</script>

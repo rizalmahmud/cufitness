@@ -24,4 +24,6 @@ path('password-reset-complete/',
      name='password_reset_complete'),
 path('workouts/', include('workouts.urls')),
 path('terms/', terms, name='terms'),
+ path('goals/', include('goals.urls')),  # new URL for goals
+
 ]
