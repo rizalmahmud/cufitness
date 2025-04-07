@@ -7,6 +7,11 @@ from accounts.views import home, terms
 
 
 urlpatterns = [
+
+path('', home, name='home'),  # Home page URL pattern
+    path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')),
+    # ... other URL patterns ...
     path('', home, name='home'),  # Home page URL
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),  # Include URLs from the accounts app

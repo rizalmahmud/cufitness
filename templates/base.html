@@ -1,6 +1,9 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CUFitness</title>
@@ -11,7 +14,7 @@
         <nav>
             <a href="{% url 'home' %}">Home</a> |
             <a href="{% url 'register' %}">Register</a> |
-            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'login' %}">Login</a> |
             <a href="{% url 'my_workouts' %}">My Workouts</a>
         </nav>
     </header>
@@ -22,13 +25,26 @@
     </div>
     <hr>
     <footer>
-    <hr>
-    <p>&copy; 2025 CUFitness. All rights reserved.</p>
-    <p>
-        <a href="{% url 'terms' %}" style="padding: 8px 16px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none;">
-            Terms and Conditions
-        </a>
-    </p>
-</footer>
+        <hr>
+        <p>&copy; 2025 CUFitness. All rights reserved.</p>
+        <p>
+            <a href="{% url 'terms' %}" style="padding: 8px 16px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none;">
+                Terms and Conditions
+            </a>
+        </p>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-container">
+        <div id="chat-toggle">Chat</div>
+        <div id="chat-window">
+            <div id="chat-messages"></div>
+            <form id="chat-form">
+                <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
+                <button type="submit" id="chat-submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'js/chatbot.js' %}"></script>
 </body>
 </html>

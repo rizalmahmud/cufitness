@@ -5,6 +5,8 @@ Django settings for cufitness project.
 import os
 from pathlib import Path
 
+OPENAI_API_KEY = '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'
+
 # Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,8 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
-    'workouts', #specefic user workouts
-    'goals', #user goals
+    'workouts',  # specific user workouts
+    'goals',     # user goals
 ]
 
 MIDDLEWARE = [
@@ -92,7 +94,8 @@ USE_TZ = True
 
 # Static files settings
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 # Email configuration for password reset (for development)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'noreply@cufitness.com'
-
