@@ -1,33 +1,56 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-  <h2>Healthy Food Videos</h2>
-  <p>Select a diet category to watch the video:</p>
-  <ul>
-    <li>
-      <a href="https://www.youtube.com/watch?v=MIOk6o5_xS8" target="_blank">
-        Low-Calorie Diet
+<div style="
+    padding: 40px;
+    background: linear-gradient(135deg, #AED581, #81C784);
+    min-height: 80vh;
+">
+  <!-- Centered content card -->
+  <div style="
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.97);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      text-align: center;
+  ">
+    <h2 style="font-size: 2.5rem; color: #333; margin-bottom: 15px;">
+      Healthy Food Videos
+    </h2>
+    <p style="font-size: 1.2rem; color: #555; margin-bottom: 30px;">
+      Select a diet category to watch the video:
+    </p>
+
+    <!-- Category Links as Colorful Buttons -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+      <a href="https://www.youtube.com/watch?v=MIOk6o5_xS8" target="_blank"
+         style="display: inline-block; padding: 12px 20px; background: linear-gradient(45deg, #FFA726, #FFB74D); color: #fff; font-weight: bold; text-decoration: none; border-radius: 8px;">
+        Low-Calorie Diet 🍏
       </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/shorts/6JbBpWEb63k" target="_blank">
-        High-Protein Diet
+
+      <a href="https://www.youtube.com/shorts/6JbBpWEb63k" target="_blank"
+         style="display: inline-block; padding: 12px 20px; background: linear-gradient(45deg, #66BB6A, #81C784); color: #fff; font-weight: bold; text-decoration: none; border-radius: 8px;">
+        High-Protein Diet 💪
       </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/watch?v=q42n27oCOUM" target="_blank">
-        Fat Loss Diet
+
+      <a href="https://www.youtube.com/watch?v=q42n27oCOUM" target="_blank"
+         style="display: inline-block; padding: 12px 20px; background: linear-gradient(45deg, #29B6F6, #4FC3F7); color: #fff; font-weight: bold; text-decoration: none; border-radius: 8px;">
+        Fat Loss Diet 🔥
       </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/watch?v=OqRvmJ2eyBA" target="_blank">
-        Bulking
+
+      <a href="https://www.youtube.com/watch?v=OqRvmJ2eyBA" target="_blank"
+         style="display: inline-block; padding: 12px 20px; background: linear-gradient(45deg, #AB47BC, #BA68C8); color: #fff; font-weight: bold; text-decoration: none; border-radius: 8px;">
+        Bulking ⚡
       </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/watch?v=InvnD77Apyc" target="_blank">
-        Keto Diet
+
+      <a href="https://www.youtube.com/watch?v=InvnD77Apyc" target="_blank"
+         style="display: inline-block; padding: 12px 20px; background: linear-gradient(45deg, #EC407A, #F48FB1); color: #fff; font-weight: bold; text-decoration: none; border-radius: 8px;">
+        Keto Diet 🥑
       </a>
-    </li>
-  </ul>
+    </div>
+  </div>
+</div>
 {% endblock %}

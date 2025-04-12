@@ -1,59 +1,66 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block content %}
-  <h2>User Profile</h2>
-  <p>Welcome, {{ request.user.email }}!</p>
-    <p>
+<div style="min-height: 80vh; display: flex; justify-content: center; align-items: center; padding: 20px; background: linear-gradient(135deg, #fceabb, #f8b500);">
+  <div style="max-width: 600px; width: 100%; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+    <h2 style="font-size: 2.5rem; color: #333; margin-bottom: 10px;">Welcome to Your Profile</h2>
+    <p style="font-size: 1.1rem; color: #666; margin-bottom: 30px;">
+      Welcome, {{ request.user.email }}!
+    </p>
 
-    <!-- Add My workouts Button -->
-  <a href="{% url 'my_workouts' %}" style="padding: 8px 16px; background-color: #e74c3c; color: white; border-radius: 8px; text-decoration: none;">My Workouts</a>
-    <p style="margin-top: 25px;"> <!-- Added margin-top to create space -->
-<p>
-<!-- Add My Goals Button -->
-    <p style="margin-top: 30px;">
-  <a href="{% url 'my_goals' %}" style="padding: 8px 16px; background-color: #28a745; color: white; border-radius: 8px; text-decoration: none;">
-      My Goals
-  </a>
-</p>
-  <p>
-  <p style="margin-top: 80px;"> <!-- Added margin-top to create space -->
+    <!-- Buttons Container: Vertical layout with uniform spacing -->
+    <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+      <!-- My Workouts Button -->
+      <a href="{% url 'my_workouts' %}"
+         style="display: block; width: 100%; max-width: 300px; padding: 10px 20px; background: linear-gradient(45deg, #e74c3c, #e67e22); color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold;">
+         My Workouts 💪
+      </a>
 
-      <div style="text-align: right; margin-top: 20px; margin-right: 1000px;">
+      <!-- My Goals Button -->
+      <a href="{% url 'my_goals' %}"
+         style="display: block; width: 100%; max-width: 300px; padding: 10px 20px; background: linear-gradient(45deg, #28a745, #2ecc71); color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold;">
+         My Goals 🎯
+      </a>
+
+      <!-- Workout Video Button -->
+      <a href="{% url 'workout_videos' %}"
+         style="display: block; width: 100%; max-width: 300px; padding: 10px 20px; background: linear-gradient(45deg, #ff9800, #f57c00); color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold;">
+         Workout Video 📹
+      </a>
+
+      <!-- Healthy 5 Min Meal Button -->
+      <a href="{% url 'healthy_meals' %}"
+         style="display: block; width: 100%; max-width: 300px; padding: 10px 20px; background: linear-gradient(45deg, #4CAF50, #81C784); color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold;">
+         Healthy 5 Min Meal 🍏
+      </a>
+
+      <!-- Logout & Delete Account Container -->
+      <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; justify-content: center;">
+        <!-- Logout Button -->
+        <form action="{% url 'logout' %}" method="post" style="display: inline;">
+          {% csrf_token %}
+          <button type="submit"
+                  style="padding: 10px 20px; background: linear-gradient(45deg, #5e6367, #616161); color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">
+            Logout 🔓
+          </button>
+        </form>
+          <a href="{% url 'contact_trainer' %}"
+   style="padding: 10px 16px; background: linear-gradient(45deg, #00bcd4, #009688); color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold;">
+    Contact Personal Trainer 🏋️‍♂️
+</a>
+          <a href="{% url 'easy_meal' %}" style="padding: 8px 16px; background-color: #ff9800; color: white; border-radius: 4px; text-decoration: none;">
+  Easy Meal 🍔
+</a>
 
 
-<p style="margin-top: 20px;">
-    <a href="{% url 'workout_videos' %}" style="padding: 8px 16px; background-color: #ff9800; color: white; border-radius: 4px; text-decoration: none;">
-        Workout Video
-    </a>
-</p>
-
-<p style="margin-top: 20px;">
-    <a href="{% url 'healthy_meals' %}" style="padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 4px; text-decoration: none;">
-        Healthy 5 Minutes Meal
-    </a>
-</p>
-<p style="margin-top: 20px;">
-    <a href="{% url 'contact_trainer' %}" style="padding: 8px 16px; background-color: #FF5722; color: white; border-radius: 4px; text-decoration: none;">
-        Contact Personal Trainer
-    </a>
-</p>
-
-  <!-- Logout Button -->
-  <form action="{% url 'logout' %}" method="post" style="display:inline;">
-      {% csrf_token %}
-      <button type="submit" style="padding: 8px 16px; background-color: #5e6367; color: white; border: none; border-radius: 4px; cursor: pointer;">
-          Logout
-      </button>
-  </form>
-
-  <!-- Space Between Buttons -->
-  <span style="margin-left: 10px;"></span>
-
-
-  <!-- Delete My Account Button -->
-
-  <a href="{% url 'delete_account' %}" style="padding: 8px 16px; background-color: #753d1b; color: white; border-radius: 4px; text-decoration: none; display:inline-block;">
-      Delete My Account
-  </a>
+        <!-- Delete Account Button -->
+        <a href="{% url 'delete_account' %}"
+           style="display: inline-block; padding: 10px 20px; background: linear-gradient(45deg, #f44336, #e91e63); color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold;">
+          Delete Account 🗑️
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
-
 {% endblock %}

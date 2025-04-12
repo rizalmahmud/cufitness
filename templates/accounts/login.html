@@ -1,21 +1,76 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-        <div style="text-align: center;">
-    <p><strong><em>"Do it for the people who wants to see you fail"</em></strong></p>
-</div>
+<!-- Full-screen hero section with a bold background color -->
+<div style="
+    min-height: 100vh;
+    background: #6A1B9A; /* Purple background - adjust as desired */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;">
 
+  <!-- Title for the Login Page -->
+  <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">
+    Login
+  </h1>
 
-    <h2>Login</h2>
+  <!-- Motivational Quote -->
+  <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 2rem;">
+    "Do it for the people who wants to see you fail"
+  </p>
+
+  <!-- Form Container -->
+  <div style="
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 8px;">
+
+    <!-- Django form for login -->
     <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
+      {% csrf_token %}
+      <div style="margin-bottom: 1rem; text-align:left;">
+        <label for="id_username" style="margin-bottom: 0.5rem; display:block;">
+          Username:
+        </label>
+        <input type="text" name="username" id="id_username" required
+               style="width: 100%; padding: 10px; border: none; border-radius: 4px;">
+      </div>
+
+      <div style="margin-bottom: 1rem; text-align:left;">
+        <label for="id_password" style="margin-bottom: 0.5rem; display:block;">
+          Password:
+        </label>
+        <input type="password" name="password" id="id_password" required
+               style="width: 100%; padding: 10px; border: none; border-radius: 4px;">
+      </div>
+
+      <button type="submit"
+              style="padding: 12px 24px; background-color: #FFC107; color: #000; border: none; border-radius: 4px; font-weight: bold; cursor: pointer;">
+        Login
+      </button>
     </form>
 
-    <p>Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
-    <p>
-  Forgot your password? <a href="{% url 'password_reset' %}">Reset it here</a>.
-</p>
+    <!-- Links for Registration and Password Reset -->
+    <p style="margin-top: 1rem;">
+      Don't have an account?
+      <a href="{% url 'register' %}" style="color: #FFC107; text-decoration: none; font-weight: bold;">
+        Register here
+      </a>.
+    </p>
+    <p style="margin-top: 0.5rem;">
+      Forgot your password?
+      <a href="{% url 'password_reset' %}" style="color: #FFC107; text-decoration: none; font-weight: bold;">
+        Reset it
+      </a>.
+    </p>
+  </div>
+</div>
 {% endblock %}
-

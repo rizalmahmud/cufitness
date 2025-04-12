@@ -1,18 +1,61 @@
-
 {% extends "base.html" %}
 {% load static %}
 
-<img src="{% static 'images/cufitness.jpg' %}" alt="Front Page Banner" style="width:100%; max-height: 400px; object-fit: cover;">
-
-
 {% block content %}
+<!-- Full-screen hero section with a bold background color -->
+<div style="
+    min-height: 100vh;
+    background: #6A1B9A; /* Purple background - adjust as desired */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;">
 
-    <div style="text-align: center;">
-    <p><strong><em>"One day or day one, you decide"</em></strong></p>
+  <!-- Main Heading -->
+  <h1 style="font-size: 3rem; margin-bottom: 1rem;">
+    WELCOME TO CUFITNESS
+  </h1>
+
+  <!-- Sub-heading / Quote -->
+  <p style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">
+    "One day or day one, you decide"
+  </p>
+
+  <!-- Additional subtext or motivational message -->
+  <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem;">
+    No judgement, no stress—just a supportive environment to help you reach your goals.
+    Join us today and start your fitness journey with confidence!
+  </p>
+
+  <!-- Call-to-action Buttons -->
+  <div>
+    <a href="{% url 'register' %}"
+       style="
+         margin-right: 10px;
+         padding: 14px 24px;
+         background-color: #FFC107;  /* Bright gold/yellow */
+         color: #000;
+         text-decoration: none;
+         border-radius: 4px;
+         font-weight: bold;
+         font-size: 1rem;">
+      Register
+    </a>
+    <a href="{% url 'login' %}"
+       style="
+         margin-left: 10px;
+         padding: 14px 24px;
+         background-color: #4CAF50; /* Green */
+         color: #fff;
+         text-decoration: none;
+         border-radius: 4px;
+         font-weight: bold;
+         font-size: 1rem;">
+      Login
+    </a>
+  </div>
 </div>
-
-    <h2>Welcome to CUFitness Home Page!</h2>
-
-
-    <p>Click the links above to register or login.</p>
 {% endblock %}

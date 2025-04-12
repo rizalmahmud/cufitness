@@ -6,6 +6,8 @@ from django.contrib.auth import views as auth_views
 from accounts.views import home, terms
 
 
+
+
 urlpatterns = [
 
 path('', home, name='home'),  # Home page URL pattern
