@@ -1,20 +1,35 @@
+
 <!-- Diet Plan Section -->
-<hr>
-<h2>Diet Plans for Your Fitness Goals</h2>
-<p>Select your desired weight loss goal to view the corresponding diet plan:</p>
+<hr style="border: 0; border-top: 2px solid #e0e0e0; margin: 40px 0;">
+<div style="text-align: center; margin-bottom: 30px;">
+  <h2 style="font-size: 2.5rem; color: #333; margin-bottom: 10px;">Diet Plans for Your Fitness Goals</h2>
+  <p style="font-size: 1.2rem; color: #666;">Select your desired weight loss goal to view the corresponding diet plan</p>
+</div>
 
 <!-- Buttons (Tabs) for Diet Plans -->
-<div>
-  <button class="diet-tab" onclick="showDietPlan('plan2')" style="padding: 8px 16px; margin-right: 10px;">Lose 2 kg</button>
-  <button class="diet-tab" onclick="showDietPlan('plan5')" style="padding: 8px 16px; margin-right: 10px;">Lose 5 kg</button>
-  <button class="diet-tab" onclick="showDietPlan('plan7')" style="padding: 8px 16px; margin-right: 10px;">Lose 7 kg</button>
-  <button class="diet-tab" onclick="showDietPlan('plan10')" style="padding: 8px 16px;">Lose 10 kg</button>
+<div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+  <button class="diet-tab" onclick="showDietPlan('plan2')"
+          style="background: linear-gradient(45deg, #ff7043, #ffab91); color: #fff; border: none; padding: 12px 20px; border-radius: 8px; font-size: 1rem; cursor: pointer;">
+    Lose 2 kg
+  </button>
+  <button class="diet-tab" onclick="showDietPlan('plan5')"
+          style="background: linear-gradient(45deg, #26c6da, #80deea); color: #fff; border: none; padding: 12px 20px; border-radius: 8px; font-size: 1rem; cursor: pointer;">
+    Lose 5 kg
+  </button>
+  <button class="diet-tab" onclick="showDietPlan('plan7')"
+          style="background: linear-gradient(45deg, #66bb6a, #a5d6a7); color: #fff; border: none; padding: 12px 20px; border-radius: 8px; font-size: 1rem; cursor: pointer;">
+    Lose 7 kg
+  </button>
+  <button class="diet-tab" onclick="showDietPlan('plan10')"
+          style="background: linear-gradient(45deg, #ab47bc, #ce93d8); color: #fff; border: none; padding: 12px 20px; border-radius: 8px; font-size: 1rem; cursor: pointer;">
+    Lose 10 kg
+  </button>
 </div>
 
 <!-- Diet Plan Details (Hidden by Default) -->
-<div id="plan2" class="diet-plan" style="display:none; margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
-  <h3>Diet Plan for 2 kg Weight Loss</h3>
-  <ul style="margin-bottom: 20px;">
+<div id="plan2" class="diet-plan" style="display:none; margin: 30px auto; padding: 25px; border-radius: 10px; max-width: 700px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <h3 style="color: #333; margin-bottom: 15px;">Diet Plan for 2 kg Weight Loss</h3>
+  <ul style="font-size: 1rem; color: #555; margin-bottom: 20px; line-height: 1.6;">
     <li>Breakfast: Oatmeal with berries and a small handful of almonds</li>
     <li>Snack: Greek yogurt with honey</li>
     <li>Lunch: Grilled chicken salad with mixed greens and vinaigrette</li>
@@ -23,14 +38,14 @@
     <li>Hydration: At least 8 glasses of water</li>
     <li><strong>Recommended Daily Calorie Intake:</strong> 2100 calories</li>
   </ul>
-  <div style="margin-top: 20px;">
+  <div style="margin-top: 20px; font-size: 0.9rem; color: #777;">
     <em>Note: This plan is ideal for 80kg body weight people.</em>
   </div>
 </div>
 
-<div id="plan5" class="diet-plan" style="display:none; margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
-  <h3>Diet Plan for 5 kg Weight Loss</h3>
-  <ul style="margin-bottom: 20px;">
+<div id="plan5" class="diet-plan" style="display:none; margin: 30px auto; padding: 25px; border-radius: 10px; max-width: 700px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <h3 style="color: #333; margin-bottom: 15px;">Diet Plan for 5 kg Weight Loss</h3>
+  <ul style="font-size: 1rem; color: #555; margin-bottom: 20px; line-height: 1.6;">
     <li>Breakfast: Scrambled eggs with spinach and whole-grain toast</li>
     <li>Snack: A small smoothie (banana, spinach, protein powder, water)</li>
     <li>Lunch: Turkey wrap with whole wheat tortilla and lots of veggies</li>
@@ -39,14 +54,14 @@
     <li>Hydration: 8-10 glasses of water daily</li>
     <li><strong>Recommended Daily Calorie Intake:</strong> 1900 calories</li>
   </ul>
-  <div style="margin-top: 20px;">
+  <div style="margin-top: 20px; font-size: 0.9rem; color: #777;">
     <em>Note: This plan is ideal for 80kg body weight people.</em>
   </div>
 </div>
 
-<div id="plan7" class="diet-plan" style="display:none; margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
-  <h3>Diet Plan for 7 kg Weight Loss</h3>
-  <ul style="margin-bottom: 20px;">
+<div id="plan7" class="diet-plan" style="display:none; margin: 30px auto; padding: 25px; border-radius: 10px; max-width: 700px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <h3 style="color: #333; margin-bottom: 15px;">Diet Plan for 7 kg Weight Loss</h3>
+  <ul style="font-size: 1rem; color: #555; margin-bottom: 20px; line-height: 1.6;">
     <li>Breakfast: Smoothie bowl with mixed berries, banana, and a sprinkle of granola</li>
     <li>Snack: Cottage cheese with sliced pineapple</li>
     <li>Lunch: Quinoa salad with black beans, corn, diced tomatoes, and avocado</li>
@@ -55,14 +70,14 @@
     <li>Hydration: At least 10 glasses of water daily</li>
     <li><strong>Recommended Daily Calorie Intake:</strong> 1700 calories</li>
   </ul>
-  <div style="margin-top: 20px;">
+  <div style="margin-top: 20px; font-size: 0.9rem; color: #777;">
     <em>Note: This plan is ideal for 80kg body weight people.</em>
   </div>
 </div>
 
-<div id="plan10" class="diet-plan" style="display:none; margin-top: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
-  <h3>Diet Plan for 10 kg Weight Loss</h3>
-  <ul style="margin-bottom: 20px;">
+<div id="plan10" class="diet-plan" style="display:none; margin: 30px auto; padding: 25px; border-radius: 10px; max-width: 700px; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <h3 style="color: #333; margin-bottom: 15px;">Diet Plan for 10 kg Weight Loss</h3>
+  <ul style="font-size: 1rem; color: #555; margin-bottom: 20px; line-height: 1.6;">
     <li>Breakfast: Egg white omelette with vegetables and a side of fresh fruit</li>
     <li>Snack: Protein shake with water and a piece of fruit</li>
     <li>Lunch: Grilled chicken or tempeh with mixed salad greens, quinoa, and a light dressing</li>
@@ -71,7 +86,7 @@
     <li>Hydration: At least 10-12 glasses of water daily</li>
     <li><strong>Recommended Daily Calorie Intake:</strong> 1500 calories</li>
   </ul>
-  <div style="margin-top: 20px;">
+  <div style="margin-top: 20px; font-size: 0.9rem; color: #777;">
     <em>Note: This plan is ideal for 80kg body weight people.</em>
   </div>
 </div>

@@ -3,48 +3,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUFitness</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUFitness</title>
+  <!-- Chatbot CSS -->
+  <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
+  <!-- You can add more CSS here or link other CSS files -->
+  <style>
+    /* Additional base styling (optional) */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+    header {
+      background: linear-gradient(135deg, #ff5722, #ff8a65);
+      color: #fff;
+      padding: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .content {
+      padding: 40px;
+      min-height: 70vh;
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #ff9800;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>CUFitness</h1>
-        <nav>
-            <a href="{% url 'home' %}">Home</a> |
-            <a href="{% url 'register' %}">Register</a> |
-            <a href="{% url 'login' %}">Login</a> |
-            <a href="{% url 'my_workouts' %}">My Workouts</a>
-        </nav>
-    </header>
-    <hr>
-    <div>
-        {% block content %}
-        {% endblock %}
-    </div>
-    <hr>
-    <footer>
-        <hr>
-        <p>&copy; 2025 CUFitness. All rights reserved.</p>
-        <p>
-            <a href="{% url 'terms' %}" style="padding: 8px 16px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none;">
-                Terms and Conditions
-            </a>
-        </p>
-    </footer>
+  <header>
+    <div style="max-width: 1200px; margin: auto;">
+      <h1>CUFitness</h1>
+      <nav>
+        <a href="{% url 'home' %}">Home</a> |
+        <a href="{% url 'register' %}">Register</a> |
+        <a href="{% url 'login' %}">Login</a> |
 
-    <!-- Chatbot Widget -->
-    <div id="chatbot-container">
-        <div id="chat-toggle">Chat</div>
-        <div id="chat-window">
-            <div id="chat-messages"></div>
-            <form id="chat-form">
-                <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
-                <button type="submit" id="chat-submit">Send</button>
-            </form>
-        </div>
+      </nav>
     </div>
-    <script src="{% static 'js/chatbot.js' %}"></script>
+  </header>
+
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  <footer>
+    <hr style="border: 0; border-top: 1px solid #444; margin: 20px 0;">
+    <p>&copy; 2025 CUFitness. All rights reserved.</p>
+    <p>
+      <a href="{% url 'terms' %}" style="padding: 8px 16px; background-color: #007bff; color: white; border-radius: 4px; text-decoration: none;">
+        Terms and Conditions
+      </a>
+    </p>
+  </footer>
+
+  <!-- Chatbot Widget -->
+  <div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <div id="chat-toggle" style="background: #007bff; color: #fff; padding: 10px 15px; border-radius: 50%; cursor: pointer; text-align: center;">
+      Chat
+    </div>
+    <div id="chat-window" style="display: none; width: 300px; height: 400px; background: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.3); margin-top: 10px; display: flex; flex-direction: column;">
+      <div id="chat-messages" style="flex: 1; padding: 10px; overflow-y: auto;"></div>
+      <form id="chat-form" style="display: flex; border-top: 1px solid #ccc;">
+        <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" style="flex: 1; padding: 10px; border: none; outline: none;">
+        <button type="submit" id="chat-submit" style="padding: 10px; background: #007bff; color: #fff; border: none; cursor: pointer;">
+          Send
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toggle Chat Window Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatToggle = document.getElementById('chat-toggle');
+      const chatWindow = document.getElementById('chat-window');
+
+      chatToggle.addEventListener('click', function() {
+        if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+          chatWindow.style.display = 'block';
+        } else {
+          chatWindow.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+  <!-- Load external chatbot functionality (if any) -->
+  <script src="{% static 'js/chatbot.js' %}"></script>
 </body>
 </html>

@@ -1,29 +1,40 @@
-{% extends "base.html" %}
+
 
 {% block content %}
-  <h2>Workout Videos</h2>
-  <p>Select a workout category to watch the video:</p>
-  <ul>
-    <li>
-      <a href="https://www.youtube.com/watch?v=https://www.youtube.com/shorts/YPpII0k2EVc" target="_blank">
-        Chest Workout
+<div style="padding: 40px; background: linear-gradient(135deg, #FF9A9E, #FAD0C4); min-height: 80vh;">
+  <!-- White card container with shadow -->
+  <div style="max-width: 800px; margin: 0 auto; background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+    <h2 style="text-align: center; color: #333; font-size: 2.5rem; margin-bottom: 10px;">Workout Videos</h2>
+    <p style="text-align: center; color: #555; font-size: 1.2rem; margin-bottom: 30px;">
+      Select a workout category to watch the video.
+    </p>
+
+    <!-- Container for workout category links -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+      <!-- Chest Workout -->
+      <a href="https://www.youtube.com/watch?v=https://www.youtube.com/shorts/YPpII0k2EVc" target="_blank"
+         style="flex: 1 1 40%; min-width: 220px; text-decoration: none; background: linear-gradient(45deg, #FF7043, #FFAB91); padding: 15px; border-radius: 8px; color: #fff; font-weight: bold; text-align: center;">
+         Chest Workout
       </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/watch?v=https://www.youtube.com/shorts/AJUh03WB8F4" target="_blank">
-        Legs Workout
+
+      <!-- Legs Workout -->
+      <a href="https://www.youtube.com/watch?v=https://www.youtube.com/shorts/AJUh03WB8F4" target="_blank"
+         style="flex: 1 1 40%; min-width: 220px; text-decoration: none; background: linear-gradient(45deg, #26C6DA, #80DEEA); padding: 15px; border-radius: 8px; color: #fff; font-weight: bold; text-align: center;">
+         Legs Workout
       </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/watch?v=https://www.youtube.com/shorts/w_SUfk8z76Q" target="_blank">
-        Back Workout
+
+      <!-- Back Workout -->
+      <a href="https://www.youtube.com/watch?v=https://www.youtube.com/shorts/w_SUfk8z76Q" target="_blank"
+         style="flex: 1 1 40%; min-width: 220px; text-decoration: none; background: linear-gradient(45deg, #66BB6A, #A5D6A7); padding: 15px; border-radius: 8px; color: #fff; font-weight: bold; text-align: center;">
+         Back Workout
       </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/watch?v=https://www.youtube.com/shorts/lYH24HZr0zU" target="_blank">
-        Shoulder Workout
+
+      <!-- Shoulder Workout -->
+      <a href="https://www.youtube.com/watch?v=https://www.youtube.com/shorts/lYH24HZr0zU" target="_blank"
+         style="flex: 1 1 40%; min-width: 220px; text-decoration: none; background: linear-gradient(45deg, #AB47BC, #CE93D8); padding: 15px; border-radius: 8px; color: #fff; font-weight: bold; text-align: center;">
+         Shoulder Workout
       </a>
-    </li>
-    <!-- Add more categories as needed -->
-  </ul>
+    </div>
+  </div>
+</div>
 {% endblock %}
