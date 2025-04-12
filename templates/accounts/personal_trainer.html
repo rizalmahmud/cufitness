@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Contact Personal Trainer</h2>
+<p>Click the button below to initiate a chat with your personal trainer.</p>
+<div id="pt-chat-container" style="border:1px solid #ccc; padding:20px; border-radius:4px; max-width:500px;">
+    <div id="pt-chat-window">
+        <div id="pt-chat-messages" style="min-height:100px; margin-bottom:10px;"></div>
+        <!-- A button that triggers the chatbot message -->
+        <button id="pt-chat-start" style="padding:8px 16px; background-color:#007bff; color:white; border:none; border-radius:4px; cursor:pointer;">
+            Chat
+        </button>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const chatButton = document.getElementById('pt-chat-start');
+    const chatMessages = document.getElementById('pt-chat-messages');
+    chatButton.addEventListener('click', function() {
+        // Create a message element with the auto-response
+        const messageElem = document.createElement('div');
+        messageElem.classList.add('chat-message', 'bot-message');
+        messageElem.innerText = "Thank you for reaching your personal trainer. I will contact you soon.";
+        chatMessages.appendChild(messageElem);
+        // Optionally disable the button after first use
+        chatButton.disabled = true;
+    });
+});
+</script>
+{% endblock %}

@@ -9,6 +9,8 @@ import json
 import openai
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+def contact_trainer(request):
+    return render(request, 'accounts/personal_trainer.html')
 
 def healthy_meals(request):
     return render(request, 'accounts/healthy_meals.html')
