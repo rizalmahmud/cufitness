@@ -1,50 +1,40 @@
-document.addEventListener('DOMContentLoaded', function(){
-    const chatToggle = document.getElementById('chat-toggle');
-    const chatWindow = document.getElementById('chat-window');
-    chatToggle.addEventListener('click', function(){
-        if(chatWindow.style.display === 'none' || chatWindow.style.display === ''){
-            chatWindow.style.display = 'block';
-        } else {
-            chatWindow.style.display = 'none';
-        }
-    });
-
+document.addEventListener('DOMContentLoaded', function() {
+    // Get references to the chat elements
     const chatForm = document.getElementById('chat-form');
     const chatInput = document.getElementById('chat-input');
     const chatMessages = document.getElementById('chat-messages');
 
-    chatForm.addEventListener('submit', function(e){
+    // Listen for form submission
+    chatForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const userMessage = chatInput.value.trim();
-        if(userMessage !== ''){
+        if (userMessage) {
             // Display user's message
-            const messageElem = document.createElement('div');
-            messageElem.classList.add('chat-message', 'user-message');
-            messageElem.innerText = userMessage;
-            chatMessages.appendChild(messageElem);
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'chat-message user-message';
+            userMessageDiv.innerText = userMessage;
+            chatMessages.appendChild(userMessageDiv);
             chatInput.value = '';
 
-            // Send the message to the Django endpoint
-            fetch('/accounts/chatbot/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    // For production, include CSRF token as needed.
-                },
-                body: JSON.stringify({ message: userMessage })
-            })
-            .then(response => response.json())
-            .then(data => {
-                const botResponse = data.reply || "Sorry, something went wrong.";
-                const botMessageElem = document.createElement('div');
-                botMessageElem.classList.add('chat-message', 'bot-message');
-                botMessageElem.innerText = botResponse;
-                chatMessages.appendChild(botMessageElem);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            // Determine bot response using simple rules
+            let botResponse = "";
+            const lowerCaseMsg = userMessage.toLowerCase();
+            if (lowerCaseMsg.includes("hi") || lowerCaseMsg.includes("hello")) {
+                botResponse = "Hello! How can I help you today?";
+            } else if (lowerCaseMsg.includes("help")) {
+                botResponse = "Sure, I'm here to help. What do you need assistance with?";
+            } else {
+                botResponse = "I'm not sure I understand. Can you please rephrase?";
+            }
+
+            // Display bot's response
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.className = 'chat-message bot-message';
+            botMessageDiv.innerText = botResponse;
+            chatMessages.appendChild(botMessageDiv);
+
+            // Scroll the chat window to the bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
     });
 });

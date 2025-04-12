@@ -19,6 +19,19 @@
 
       <div style="text-align: right; margin-top: 20px; margin-right: 1000px;">
 
+
+<p style="margin-top: 20px;">
+    <a href="{% url 'workout_videos' %}" style="padding: 8px 16px; background-color: #ff9800; color: white; border-radius: 4px; text-decoration: none;">
+        Workout Video
+    </a>
+</p>
+
+<p style="margin-top: 20px;">
+    <a href="{% url 'healthy_meals' %}" style="padding: 8px 16px; background-color: #4CAF50; color: white; border-radius: 4px; text-decoration: none;">
+        Healthy 5 Minutes Meal
+    </a>
+</p>
+
   <!-- Logout Button -->
   <form action="{% url 'logout' %}" method="post" style="display:inline;">
       {% csrf_token %}

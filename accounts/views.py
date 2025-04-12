@@ -10,6 +10,10 @@ import openai
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
+def healthy_meals(request):
+    return render(request, 'accounts/healthy_meals.html')
+
+
 def home(request):
     return render(request, 'home.html')
 
@@ -50,6 +54,11 @@ def delete_account(request):
         return redirect('home')
     # For GET requests, show a confirmation page
     return render(request, 'accounts/delete_account_confirm.html')
+#workout videos
+def workout_videos(request):
+    # You can later pass context data if needed
+    return render(request, 'accounts/workout_videos.html')
+
 
 @login_required
 def profile(request):
